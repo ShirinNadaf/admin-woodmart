@@ -1,4 +1,4 @@
 export class Product {
-    id: string | undefined;;
+    id: string | undefined;
     Category:string | undefined
 }

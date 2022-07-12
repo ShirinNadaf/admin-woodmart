@@ -98,28 +98,39 @@
         <div class="modal-body">
             <form class="row g-3">
                 <div class="col-md-6">
-                    <label for="inputName" class="form-label">Student Name</label>
+                    <label for="inputName" class="form-label">Product Name</label>
                     <input type="text" formControlName="name" class="form-control" id="inputName">
                   </div>
                   <div class="col-md-6">
-                    <label for="inputClass" class="form-label">Class</label>
+                    <label for="inputClass" class="form-label">Category</label>
                     <input type="text" formControlName="class" class="form-control" id="inputClass">
                   </div>
                 <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" formControlName="email" class="form-control" id="inputEmail4">
-                </div>
+                  <label for="inputEmail4" class="form-label"> Description</label>
+                  <textarea name="" id="" cols="10" rows="10"  formControlName="text" class="form-control" id="inputEmail4"></textarea>                </div>
                 <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">Password</label>
+                  <label for="inputPassword4" class="form-label">Short description</label>
                   <input type="password" formControlName="password" class="form-control" id="inputPassword4">
                 </div>
                 <div class="col-12">
-                  <label for="inputAddress" class="form-label">Address</label>
+                  <label for="inputAddress" class="form-label">Color</label>
                   <input type="text" class="form-control" formControlName="address" id="inputAddress" placeholder="1234 Main St">
                 </div>
                 <div class="col-12">
-                  <label for="inputCity" class="form-label">City</label>
+                  <label for="inputCity" class="form-label">Size</label>
+                  <input type="number" class="form-control" id="inputAddress2" formControlName="city" placeholder="Enter your city name">
+                </div>
+                <div class="col-12">
+                  <label for="inputCity" class="form-label">Brand</label>
                   <input type="text" class="form-control" id="inputAddress2" formControlName="city" placeholder="Enter your city name">
+                </div>
+                <div class="col-12">
+                  <label for="inputCity" class="form-label">Image</label>
+                  <input type="file" class="form-control" id="inputAddress2" formControlName="city" placeholder="Enter your city name">
+                </div>
+                <div class="col-12">
+                  <label for="inputCity" class="form-label">Price</label>
+                  <input type="number" class="form-control" id="inputAddress2" formControlName="city" placeholder="Enter your city name">
                 </div>
               </form>
         </div>
