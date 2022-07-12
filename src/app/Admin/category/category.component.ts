@@ -11,30 +11,24 @@ import { ProductService } from 'src/app/product.service';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  product: any;
-  message: boolean | undefined;
-  addStudent: any;
- public categoryForm: FormGroup;
+ public profileForm:FormGroup ;
   
-  constructor(private firestore: AngularFirestore,
-    public productService :ProductService,
-    public formBuilder: FormBuilder,
-    public Routrt: Router) { 
-
-      this.categoryForm = this.formBuilder.group({
-        name: [''],
-      })
-    }
-  // category =new FormGroup({
-  //   name: new FormControl('')
-  //  });
+  constructor(
+    private firestore: AngularFirestore,
+    public productService: ProductService,
+    public formBuilder: FormBuilder
+  ){
+  this.profileForm = this.formBuilder.group({
+    firstName: []
+  
+  });
+}
   ngOnInit(): void {
     
   }
-  saveData(){
-    //  console.log(this.addStudent.value);
-        this.productService.create_prod(this.categoryForm.value);
-        console.log("hi")
-  
-    }
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.profileForm.value);
+    this.productService.create_prod(this.profileForm.value);
+  }
 }

@@ -10,9 +10,10 @@ export class ProductService {
   AngularFirestore:any;
     constructor(private firestore: AngularFirestore) { }
 
-  getprod() {
+getprod() {
     return this.firestore
-    .collection('Product_collection').snapshotChanges();
+    .collection('Product_collection').doc()
+    .snapshotChanges();
 }
 create_prod(product:Product) {
   return this.firestore

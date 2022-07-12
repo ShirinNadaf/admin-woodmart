@@ -94,16 +94,28 @@
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form [formGroup]="categoryForm" (ngSubmit)="saveData()" novalidate class="row g-3">
+                                    <!-- <form [formGroup]="addCat" (ngSubmit)="SaveData()"class="row g-3">
                                         <div class="col-md-6">
                                             <label for="inputName" class="form-label">Category Name</label>
-                                            <input type="text" required formControlName="name" class="form-control" id="inputName">
+                                            <input type="text" required formControlName="Category" class="form-control" id="inputName">
                                           </div>
-                                      </form>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="submit" class="btn btn-primary" >Save </button>
-                                </div>
+                                      </form> -->
+                                
+                                      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                                        <div class="row">
+                                      <div class="col-md-6">
+                                          <label for="inputClass" class="form-label">Category</label>
+                                          <input type="text" formControlName="firstName" class="form-control" id="first-name">
+                                        </div>
+                                        <div class="col-md-6">
+                                          <button type="submit" class="btn btn-primary catbtn" >Save changes</button>
+                                        </div>
+                                      </div>
+                                    </form>
+
+
+                                    </div>
+                               
                               </div>
                             </div>
                           </div>
