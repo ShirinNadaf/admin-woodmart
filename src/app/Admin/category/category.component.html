@@ -54,19 +54,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor="let Category of categories">
                                             <td><input type="radio"></td>
-                                            <td>Footware</td>
-                                            <td>
-                                               20
-                                            </td>
+                                            <td>{{Category.name}}</td>
+                                            <td>{{Category.product}}</td>
                                             <td>20/02/22</td>
                                             <td><select name="" id="">
                                                 <option value="">
                                                     <input type="radio" id="huey" name="drone" value="huey"
                                                 checked>
-                                         <label for="huey">Active</label>
-                                       
+                                                <label for="huey">Active</label>
                                                 </option>
                                                 <option value="">
                                                     <input type="radio" id="dewey" name="drone" value="dewey">
@@ -77,10 +74,8 @@
                                             <td>
                                                 <div><i class='fa fa-edit custom-font-family'></i></div>
                                                 <div><i class='fa fa-eraser custom-font-family'></i></div>
-
                                              </td>                   
-                                        </tr>
-                                       
+                                        </tr>                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -93,33 +88,22 @@
                                  
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <!-- <form [formGroup]="addCat" (ngSubmit)="SaveData()"class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="inputName" class="form-label">Category Name</label>
-                                            <input type="text" required formControlName="Category" class="form-control" id="inputName">
-                                          </div>
-                                      </form> -->
-                                
-                                      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                                <div class="modal-body">               
+                                      <form  #userForm="ngForm" (ngSubmit)="onAddCat(userForm.value)">
                                         <div class="row">
                                       <div class="col-md-6">
                                           <label for="inputClass" class="form-label">Category</label>
-                                          <input type="text" formControlName="firstName" class="form-control" id="first-name">
+                                          <input type="text"class="form-control" name="name" ngModel required>
                                         </div>
                                         <div class="col-md-6">
-                                          <button type="submit" class="btn btn-primary catbtn" >Save changes</button>
+                                          <button type="submit"data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary catbtn" >Save changes</button>
                                         </div>
                                       </div>
                                     </form>
-
-
-                                    </div>
-                               
+                                    </div>         
                               </div>
                             </div>
-                          </div>
-                          
+                          </div> 
                           <!-- modal end -->
                     </div>
                 </div>
