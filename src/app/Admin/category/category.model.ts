@@ -1,5 +1,5 @@
 export interface Category{
-    catId?: string;
+    catId?:string;
     name:string;
     product:string;
 }

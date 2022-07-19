@@ -49,7 +49,7 @@
                                             <td>Name</td>
                                             <td>Products</td>
                                             <td>Date</td>
-                                            <td>Status</td>
+                                            <!-- <td>Status</td> -->
                                             <td>Action</td>
                                         </tr>
                                     </thead>
@@ -59,7 +59,7 @@
                                             <td>{{Category.name}}</td>
                                             <td>{{Category.product}}</td>
                                             <td>20/02/22</td>
-                                            <td><select name="" id="">
+                                            <!-- <td><select name="" id="">
                                                 <option value="">
                                                     <input type="radio" id="huey" name="drone" value="huey"
                                                 checked>
@@ -70,11 +70,13 @@
                                                     <label for="dewey">Inactive</label>
                                                 </option>
                                             </select>
-                                            </td>
+                                            </td> -->
                                             <td>
-                                                <div><i class='fa fa-edit custom-font-family'></i></div>
+                                                <i class='fa fa-edit custom-font-family'></i>
                                                 <div><i class='fa fa-eraser custom-font-family'></i></div>
-                                             </td>                   
+                                            </td>  
+                                                          
+                                                          <!-- <td class="text-danger"><a class="text-danger"><i class='fa fa-edit custom-font-family'></i></a>    </td> -->
                                         </tr>                                    
                                     </tbody>
                                 </table>
@@ -89,14 +91,14 @@
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">               
-                                      <form  #userForm="ngForm" (ngSubmit)="onAddCat(userForm.value)">
+                                      <form  #userForm="ngForm" (ngSubmit)="onAddCat(userForm.value);userForm.resetForm()">
                                         <div class="row">
                                       <div class="col-md-6">
                                           <label for="inputClass" class="form-label">Category</label>
                                           <input type="text"class="form-control" name="name" ngModel required>
                                         </div>
                                         <div class="col-md-6">
-                                          <button type="submit"data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary catbtn" >Save changes</button>
+                                          <button type="submit" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary catbtn" >Save changes</button>
                                         </div>
                                       </div>
                                     </form>

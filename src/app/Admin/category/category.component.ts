@@ -31,15 +31,24 @@ export class CategoryComponent implements OnInit {
 
   fetchData(){
     this.http.get<Category>(this.url)
-    .pipe(map(resData=>{
-      console.log(resData)
-      for(const key in resData){
+    .pipe(map((resData:any)=>{
+      console.log(resData);
+      const catArray = [];
+      for(let key in resData){
         console.log(key);
-        // console.log(resData[key]);
+        console.log({...resData[key]});
+        if(resData.hasOwnProperty(key))
+        catArray.push({catId:key, ...resData[key]})
     }
-    }) )
+    return catArray
+    }))
     .subscribe(categories=>{
-      // console.log(categories)
+      console.log(categories);
+      this.categories = categories;
     })
   }
+
+  // onDeleteCat(id){
+
+  // }
 }
